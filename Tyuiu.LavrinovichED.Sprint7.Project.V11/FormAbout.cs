@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Tyuiu.LavrinovichED.Sprint7.Project.V11
 {
-    public partial class FormAbout : Form
+    public partial class FormAbout_LED : Form
     {
-        public FormAbout()
+        public FormAbout_LED()
         {
             InitializeComponent();
+        }
+
+        private void buttonOK_LED_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

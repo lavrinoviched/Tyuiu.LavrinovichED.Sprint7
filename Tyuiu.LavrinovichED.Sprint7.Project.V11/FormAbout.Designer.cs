@@ -1,6 +1,6 @@
 ﻿namespace Tyuiu.LavrinovichED.Sprint7.Project.V11
 {
-    partial class FormAbout
+    partial class FormAbout_LED
     {
         /// <summary>
         /// Required designer variable.
@@ -28,52 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            textBox1 = new TextBox();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout_LED));
+            textBox_LED = new TextBox();
+            pictureBox_LED = new PictureBox();
+            buttonOK_LED = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_LED).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // textBox_LED
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(369, 18);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(457, 357);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Программа разработана в рамках изучения С#\r\nТюменский Индустриальный Университет (с) 2024\r\nВысшая школа цифровых технолоий (с) 2024\r\n\r\n\r\n\r\n\r\n\r\nГруппа: АСОиУБ-24-1\r\nЛавринович Елизавета Дмитриевна";
+            textBox_LED.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox_LED.Location = new Point(293, 18);
+            textBox_LED.Multiline = true;
+            textBox_LED.Name = "textBox_LED";
+            textBox_LED.ReadOnly = true;
+            textBox_LED.Size = new Size(533, 293);
+            textBox_LED.TabIndex = 0;
+            textBox_LED.Text = resources.GetString("textBox_LED.Text");
             // 
-            // pictureBox1
+            // pictureBox_LED
             // 
-            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(62, 18);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(253, 335);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            pictureBox_LED.ErrorImage = (Image)resources.GetObject("pictureBox_LED.ErrorImage");
+            pictureBox_LED.Image = (Image)resources.GetObject("pictureBox_LED.Image");
+            pictureBox_LED.Location = new Point(23, 18);
+            pictureBox_LED.Name = "pictureBox_LED";
+            pictureBox_LED.Size = new Size(253, 335);
+            pictureBox_LED.TabIndex = 1;
+            pictureBox_LED.TabStop = false;
             // 
-            // FormAbout
+            // buttonOK_LED
+            // 
+            buttonOK_LED.Location = new Point(732, 335);
+            buttonOK_LED.Name = "buttonOK_LED";
+            buttonOK_LED.Size = new Size(94, 29);
+            buttonOK_LED.TabIndex = 2;
+            buttonOK_LED.Text = "OK";
+            buttonOK_LED.UseVisualStyleBackColor = true;
+            buttonOK_LED.Click += buttonOK_LED_Click;
+            // 
+            // FormAbout_LED
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(838, 374);
-            Controls.Add(pictureBox1);
-            Controls.Add(textBox1);
+            Controls.Add(buttonOK_LED);
+            Controls.Add(pictureBox_LED);
+            Controls.Add(textBox_LED);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormAbout";
+            Name = "FormAbout_LED";
             Text = "О разработчике";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_LED).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private PictureBox pictureBox1;
+        private TextBox textBox_LED;
+        private PictureBox pictureBox_LED;
+        private Button buttonOK_LED;
     }
 }
