@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_LED));
             panelInPut_LED = new Panel();
             groupBoxInPut_LED = new GroupBox();
@@ -85,7 +85,8 @@
             Часы = new DataGridViewTextBoxColumn();
             Доход = new DataGridViewTextBoxColumn();
             tabPageGrag_LED = new TabPage();
-            buttonGraf_LED = new Button();
+            buttonGtafMoney_LED = new Button();
+            buttonGrafClock_LED = new Button();
             chart_LED = new System.Windows.Forms.DataVisualization.Charting.Chart();
             splitter_LED = new Splitter();
             saveFileDialog_LED = new SaveFileDialog();
@@ -95,12 +96,11 @@
             toolStripFile_LED = new ToolStripDropDownButton();
             ToolStripMenuItemFile_LED = new ToolStripMenuItem();
             ToolStripMenuItemSave_LED = new ToolStripMenuItem();
-            ToolStripMenuItemSaveAs_LED = new ToolStripMenuItem();
-            ToolStripMenuItemCreate_LED = new ToolStripMenuItem();
             toolStrip_LED = new ToolStrip();
             toolStripButton_Info = new ToolStripButton();
             toolStripSearch_LED = new ToolStripSplitButton();
-            toolStripTextBox1 = new ToolStripTextBox();
+            toolStripTextBoxSearch_LED = new ToolStripTextBox();
+            openFileDialog_LED = new OpenFileDialog();
             panelInPut_LED.SuspendLayout();
             groupBoxInPut_LED.SuspendLayout();
             groupBoxFilter_LED.SuspendLayout();
@@ -596,7 +596,8 @@
             // 
             // tabPageGrag_LED
             // 
-            tabPageGrag_LED.Controls.Add(buttonGraf_LED);
+            tabPageGrag_LED.Controls.Add(buttonGtafMoney_LED);
+            tabPageGrag_LED.Controls.Add(buttonGrafClock_LED);
             tabPageGrag_LED.Controls.Add(chart_LED);
             tabPageGrag_LED.Location = new Point(4, 29);
             tabPageGrag_LED.Name = "tabPageGrag_LED";
@@ -606,31 +607,42 @@
             tabPageGrag_LED.Text = "График";
             tabPageGrag_LED.UseVisualStyleBackColor = true;
             // 
-            // buttonGraf_LED
+            // buttonGtafMoney_LED
             // 
-            buttonGraf_LED.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonGraf_LED.BackColor = Color.PaleGreen;
-            buttonGraf_LED.Location = new Point(966, 317);
-            buttonGraf_LED.Name = "buttonGraf_LED";
-            buttonGraf_LED.Size = new Size(122, 64);
-            buttonGraf_LED.TabIndex = 1;
-            buttonGraf_LED.Text = "Выполнить";
-            buttonGraf_LED.UseVisualStyleBackColor = false;
+            buttonGtafMoney_LED.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonGtafMoney_LED.BackColor = Color.PaleGreen;
+            buttonGtafMoney_LED.Location = new Point(976, 295);
+            buttonGtafMoney_LED.Name = "buttonGtafMoney_LED";
+            buttonGtafMoney_LED.Size = new Size(122, 51);
+            buttonGtafMoney_LED.TabIndex = 2;
+            buttonGtafMoney_LED.Text = "Заработная плата";
+            buttonGtafMoney_LED.UseVisualStyleBackColor = false;
+            // 
+            // buttonGrafClock_LED
+            // 
+            buttonGrafClock_LED.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonGrafClock_LED.BackColor = Color.PaleGreen;
+            buttonGrafClock_LED.Location = new Point(976, 352);
+            buttonGrafClock_LED.Name = "buttonGrafClock_LED";
+            buttonGrafClock_LED.Size = new Size(122, 72);
+            buttonGrafClock_LED.TabIndex = 1;
+            buttonGrafClock_LED.Text = "Количество отработанных часов";
+            buttonGrafClock_LED.UseVisualStyleBackColor = false;
             // 
             // chart_LED
             // 
-            chartArea1.Name = "ChartArea1";
-            chart_LED.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            chart_LED.ChartAreas.Add(chartArea2);
             chart_LED.Dock = DockStyle.Fill;
-            legend1.Name = "Legend1";
-            chart_LED.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            chart_LED.Legends.Add(legend2);
             chart_LED.Location = new Point(3, 3);
             chart_LED.Name = "chart_LED";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart_LED.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart_LED.Series.Add(series2);
             chart_LED.Size = new Size(1100, 424);
             chart_LED.TabIndex = 0;
             chart_LED.Text = "chart1";
@@ -669,7 +681,7 @@
             // toolStripFile_LED
             // 
             toolStripFile_LED.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripFile_LED.DropDownItems.AddRange(new ToolStripItem[] { ToolStripMenuItemFile_LED, ToolStripMenuItemSave_LED, ToolStripMenuItemSaveAs_LED, ToolStripMenuItemCreate_LED });
+            toolStripFile_LED.DropDownItems.AddRange(new ToolStripItem[] { ToolStripMenuItemFile_LED, ToolStripMenuItemSave_LED });
             toolStripFile_LED.Image = (Image)resources.GetObject("toolStripFile_LED.Image");
             toolStripFile_LED.ImageTransparentColor = Color.Magenta;
             toolStripFile_LED.Name = "toolStripFile_LED";
@@ -679,26 +691,16 @@
             // ToolStripMenuItemFile_LED
             // 
             ToolStripMenuItemFile_LED.Name = "ToolStripMenuItemFile_LED";
-            ToolStripMenuItemFile_LED.Size = new Size(192, 26);
+            ToolStripMenuItemFile_LED.Size = new Size(189, 26);
             ToolStripMenuItemFile_LED.Text = "Открыть файл";
+            ToolStripMenuItemFile_LED.Click += ToolStripMenuItemFile_LED_Click_1;
             // 
             // ToolStripMenuItemSave_LED
             // 
             ToolStripMenuItemSave_LED.Name = "ToolStripMenuItemSave_LED";
-            ToolStripMenuItemSave_LED.Size = new Size(192, 26);
+            ToolStripMenuItemSave_LED.Size = new Size(189, 26);
             ToolStripMenuItemSave_LED.Text = "Сохранить";
-            // 
-            // ToolStripMenuItemSaveAs_LED
-            // 
-            ToolStripMenuItemSaveAs_LED.Name = "ToolStripMenuItemSaveAs_LED";
-            ToolStripMenuItemSaveAs_LED.Size = new Size(192, 26);
-            ToolStripMenuItemSaveAs_LED.Text = "Сохранить как";
-            // 
-            // ToolStripMenuItemCreate_LED
-            // 
-            ToolStripMenuItemCreate_LED.Name = "ToolStripMenuItemCreate_LED";
-            ToolStripMenuItemCreate_LED.Size = new Size(192, 26);
-            ToolStripMenuItemCreate_LED.Text = "Создать файл";
+            ToolStripMenuItemSave_LED.Click += ToolStripMenuItemSave_LED_Click;
             // 
             // toolStrip_LED
             // 
@@ -723,17 +725,22 @@
             // toolStripSearch_LED
             // 
             toolStripSearch_LED.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripSearch_LED.DropDownItems.AddRange(new ToolStripItem[] { toolStripTextBox1 });
+            toolStripSearch_LED.DropDownItems.AddRange(new ToolStripItem[] { toolStripTextBoxSearch_LED });
             toolStripSearch_LED.Image = (Image)resources.GetObject("toolStripSearch_LED.Image");
             toolStripSearch_LED.ImageTransparentColor = Color.Magenta;
             toolStripSearch_LED.Name = "toolStripSearch_LED";
             toolStripSearch_LED.Size = new Size(49, 34);
             toolStripSearch_LED.ToolTipText = "Найти";
             // 
-            // toolStripTextBox1
+            // toolStripTextBoxSearch_LED
             // 
-            toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.Size = new Size(100, 27);
+            toolStripTextBoxSearch_LED.Name = "toolStripTextBoxSearch_LED";
+            toolStripTextBoxSearch_LED.Size = new Size(100, 27);
+            toolStripTextBoxSearch_LED.Click += toolStripTextBoxSearch_LED_Click;
+            // 
+            // openFileDialog_LED
+            // 
+            openFileDialog_LED.FileName = "openFileDialog1";
             // 
             // FormMain_LED
             // 
@@ -776,7 +783,7 @@
         private TabPage tabPageTab_LED;
         private TabPage tabPageGrag_LED;
         private DataGridView dataGridView_LED;
-        private Button buttonGraf_LED;
+        private Button buttonGrafClock_LED;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_LED;
         private Label labelName_LED;
         private Label labelSurName_LED;
@@ -800,18 +807,6 @@
         private TextBox textBoxEducation_LED;
         private Label labelClock_LED;
         private TextBox textBoxClock_LED;
-        private DataGridViewTextBoxColumn Фамилия;
-        private DataGridViewTextBoxColumn Имя;
-        private DataGridViewTextBoxColumn Отчество;
-        private DataGridViewTextBoxColumn Место;
-        private DataGridViewTextBoxColumn Телефон;
-        private DataGridViewTextBoxColumn Дата;
-        private DataGridViewTextBoxColumn Должность;
-        private DataGridViewTextBoxColumn Зачисление;
-        private DataGridViewTextBoxColumn Стаж;
-        private DataGridViewTextBoxColumn Образование;
-        private DataGridViewTextBoxColumn Часы;
-        private DataGridViewTextBoxColumn Доход;
         private Button buttonDone_LED;
         private Button buttonDel_LED;
         private Label labelMoney_LED;
@@ -825,11 +820,23 @@
         private ToolStripDropDownButton toolStripFile_LED;
         private ToolStripMenuItem ToolStripMenuItemFile_LED;
         private ToolStripMenuItem ToolStripMenuItemSave_LED;
-        private ToolStripMenuItem ToolStripMenuItemSaveAs_LED;
-        private ToolStripMenuItem ToolStripMenuItemCreate_LED;
         private ToolStrip toolStrip_LED;
         private ToolStripSplitButton toolStripSearch_LED;
-        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripTextBox toolStripTextBoxSearch_LED;
         private ToolStripButton toolStripButton_Info;
+        private OpenFileDialog openFileDialog_LED;
+        private DataGridViewTextBoxColumn Фамилия;
+        private DataGridViewTextBoxColumn Имя;
+        private DataGridViewTextBoxColumn Отчество;
+        private DataGridViewTextBoxColumn Место;
+        private DataGridViewTextBoxColumn Телефон;
+        private DataGridViewTextBoxColumn Дата;
+        private DataGridViewTextBoxColumn Должность;
+        private DataGridViewTextBoxColumn Зачисление;
+        private DataGridViewTextBoxColumn Стаж;
+        private DataGridViewTextBoxColumn Образование;
+        private DataGridViewTextBoxColumn Часы;
+        private DataGridViewTextBoxColumn Доход;
+        private Button buttonGtafMoney_LED;
     }
 }

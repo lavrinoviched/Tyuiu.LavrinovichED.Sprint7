@@ -43,6 +43,7 @@
             textBoxHelp_LED.ReadOnly = true;
             textBoxHelp_LED.Size = new Size(1008, 354);
             textBoxHelp_LED.TabIndex = 0;
+            textBoxHelp_LED.TabStop = false;
             textBoxHelp_LED.Text = resources.GetString("textBoxHelp_LED.Text");
             // 
             // labelHelp_LED
@@ -61,6 +62,7 @@
             buttonOk_LED.Name = "buttonOk_LED";
             buttonOk_LED.Size = new Size(94, 29);
             buttonOk_LED.TabIndex = 3;
+            buttonOk_LED.TabStop = false;
             buttonOk_LED.Text = "OK";
             buttonOk_LED.UseVisualStyleBackColor = true;
             buttonOk_LED.Click += buttonOk_LED_Click;

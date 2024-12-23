@@ -44,6 +44,7 @@
             textBox_LED.ReadOnly = true;
             textBox_LED.Size = new Size(533, 293);
             textBox_LED.TabIndex = 0;
+            textBox_LED.TabStop = false;
             textBox_LED.Text = resources.GetString("textBox_LED.Text");
             // 
             // pictureBox_LED
