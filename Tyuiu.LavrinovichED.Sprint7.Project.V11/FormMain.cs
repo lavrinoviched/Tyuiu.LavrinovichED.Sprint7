@@ -123,7 +123,7 @@ namespace Tyuiu.LavrinovichED.Sprint7.Project.V11
 
         }
 
-        private void ToolStripMenuItemFile_LED_Click_1(object sender, EventArgs e)
+        private void ToolStripMenuItemFile_LED_Click_1(object sender, EventArgs e)//открыть
         {
             try
             {
