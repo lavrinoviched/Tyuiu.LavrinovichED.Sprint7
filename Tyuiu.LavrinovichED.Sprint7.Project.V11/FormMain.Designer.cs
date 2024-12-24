@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_LED));
             panelInPut_LED = new Panel();
             groupBoxInPut_LED = new GroupBox();
@@ -40,12 +40,13 @@
             buttonDel_LED = new Button();
             buttonDone_LED = new Button();
             groupBoxFilter_LED = new GroupBox();
+            buttonStaff_LED = new Button();
+            buttonSearch_LED = new Button();
             textBoxStaff_LED = new TextBox();
             labelStaff_LED = new Label();
             labelInPut_LED = new Label();
             textBoxFilter_LED = new TextBox();
             labelFilter_LED = new Label();
-            comboBoxFilter_led = new ComboBox();
             labelClock_LED = new Label();
             textBoxClock_LED = new TextBox();
             labelEducation_LED = new Label();
@@ -186,6 +187,7 @@
             buttonDel_LED.TabIndex = 20;
             buttonDel_LED.Text = "Удалить";
             buttonDel_LED.UseVisualStyleBackColor = false;
+            buttonDel_LED.Click += buttonDel_LED_Click_1;
             // 
             // buttonDone_LED
             // 
@@ -196,35 +198,61 @@
             buttonDone_LED.TabIndex = 3;
             buttonDone_LED.Text = "Добавить ";
             buttonDone_LED.UseVisualStyleBackColor = false;
+            buttonDone_LED.Click += buttonDone_LED_Click_1;
             // 
             // groupBoxFilter_LED
             // 
             groupBoxFilter_LED.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBoxFilter_LED.Controls.Add(buttonStaff_LED);
+            groupBoxFilter_LED.Controls.Add(buttonSearch_LED);
             groupBoxFilter_LED.Controls.Add(textBoxStaff_LED);
             groupBoxFilter_LED.Controls.Add(labelStaff_LED);
             groupBoxFilter_LED.Controls.Add(labelInPut_LED);
             groupBoxFilter_LED.Controls.Add(textBoxFilter_LED);
             groupBoxFilter_LED.Controls.Add(labelFilter_LED);
-            groupBoxFilter_LED.Controls.Add(comboBoxFilter_led);
             groupBoxFilter_LED.ImeMode = ImeMode.Off;
-            groupBoxFilter_LED.Location = new Point(793, 23);
+            groupBoxFilter_LED.Location = new Point(793, 18);
             groupBoxFilter_LED.Name = "groupBoxFilter_LED";
-            groupBoxFilter_LED.Size = new Size(316, 229);
+            groupBoxFilter_LED.Size = new Size(316, 234);
             groupBoxFilter_LED.TabIndex = 4;
             groupBoxFilter_LED.TabStop = false;
             // 
+            // buttonStaff_LED
+            // 
+            buttonStaff_LED.BackColor = SystemColors.GradientInactiveCaption;
+            buttonStaff_LED.Location = new Point(208, 159);
+            buttonStaff_LED.Name = "buttonStaff_LED";
+            buttonStaff_LED.Size = new Size(94, 36);
+            buttonStaff_LED.TabIndex = 25;
+            buttonStaff_LED.Text = "Посчитать";
+            buttonStaff_LED.UseVisualStyleBackColor = false;
+            buttonStaff_LED.Click += buttonStaff_LED_Click;
+            // 
+            // buttonSearch_LED
+            // 
+            buttonSearch_LED.BackColor = SystemColors.GradientActiveCaption;
+            buttonSearch_LED.Location = new Point(208, 46);
+            buttonSearch_LED.Name = "buttonSearch_LED";
+            buttonSearch_LED.Size = new Size(94, 36);
+            buttonSearch_LED.TabIndex = 24;
+            buttonSearch_LED.Text = "Поиск";
+            buttonSearch_LED.UseVisualStyleBackColor = false;
+            buttonSearch_LED.Click += buttonSearch_LED_Click;
+            // 
             // textBoxStaff_LED
             // 
-            textBoxStaff_LED.Location = new Point(87, 188);
+            textBoxStaff_LED.Location = new Point(6, 159);
+            textBoxStaff_LED.Multiline = true;
             textBoxStaff_LED.Name = "textBoxStaff_LED";
             textBoxStaff_LED.ReadOnly = true;
-            textBoxStaff_LED.Size = new Size(138, 27);
+            textBoxStaff_LED.Size = new Size(196, 34);
             textBoxStaff_LED.TabIndex = 21;
+            textBoxStaff_LED.TextAlign = HorizontalAlignment.Center;
             // 
             // labelStaff_LED
             // 
             labelStaff_LED.AutoSize = true;
-            labelStaff_LED.Location = new Point(68, 165);
+            labelStaff_LED.Location = new Point(20, 130);
             labelStaff_LED.Name = "labelStaff_LED";
             labelStaff_LED.Size = new Size(182, 20);
             labelStaff_LED.TabIndex = 22;
@@ -240,30 +268,22 @@
             // 
             // textBoxFilter_LED
             // 
-            textBoxFilter_LED.Location = new Point(45, 85);
+            textBoxFilter_LED.Location = new Point(6, 46);
             textBoxFilter_LED.Multiline = true;
             textBoxFilter_LED.Name = "textBoxFilter_LED";
-            textBoxFilter_LED.Size = new Size(231, 34);
+            textBoxFilter_LED.Size = new Size(196, 34);
             textBoxFilter_LED.TabIndex = 2;
             textBoxFilter_LED.TextAlign = HorizontalAlignment.Center;
             // 
             // labelFilter_LED
             // 
             labelFilter_LED.AutoSize = true;
-            labelFilter_LED.Location = new Point(87, 23);
+            labelFilter_LED.Location = new Point(32, 23);
             labelFilter_LED.Name = "labelFilter_LED";
             labelFilter_LED.Size = new Size(124, 20);
             labelFilter_LED.TabIndex = 1;
             labelFilter_LED.Tag = "";
             labelFilter_LED.Text = "Фильтровать по:";
-            // 
-            // comboBoxFilter_led
-            // 
-            comboBoxFilter_led.FormattingEnabled = true;
-            comboBoxFilter_led.Location = new Point(45, 51);
-            comboBoxFilter_led.Name = "comboBoxFilter_led";
-            comboBoxFilter_led.Size = new Size(231, 28);
-            comboBoxFilter_led.TabIndex = 0;
             // 
             // labelClock_LED
             // 
@@ -617,6 +637,7 @@
             buttonGtafMoney_LED.TabIndex = 2;
             buttonGtafMoney_LED.Text = "Заработная плата";
             buttonGtafMoney_LED.UseVisualStyleBackColor = false;
+            buttonGtafMoney_LED.Click += buttonGtafMoney_LED_Click;
             // 
             // buttonGrafClock_LED
             // 
@@ -628,21 +649,22 @@
             buttonGrafClock_LED.TabIndex = 1;
             buttonGrafClock_LED.Text = "Количество отработанных часов";
             buttonGrafClock_LED.UseVisualStyleBackColor = false;
+            buttonGrafClock_LED.Click += buttonGrafClock_LED_Click;
             // 
             // chart_LED
             // 
-            chartArea2.Name = "ChartArea1";
-            chart_LED.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            chart_LED.ChartAreas.Add(chartArea1);
             chart_LED.Dock = DockStyle.Fill;
-            legend2.Name = "Legend1";
-            chart_LED.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            chart_LED.Legends.Add(legend1);
             chart_LED.Location = new Point(3, 3);
             chart_LED.Name = "chart_LED";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart_LED.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart_LED.Series.Add(series1);
             chart_LED.Size = new Size(1100, 424);
             chart_LED.TabIndex = 0;
             chart_LED.Text = "chart1";
@@ -776,7 +798,6 @@
         private GroupBox groupBoxFilter_LED;
         private GroupBox groupBoxInPut_LED;
         private Label labelFilter_LED;
-        private ComboBox comboBoxFilter_led;
         private Label labelInPut_LED;
         private TextBox textBoxFilter_LED;
         private TabControl tabControlGraf_LED;
@@ -838,5 +859,7 @@
         private DataGridViewTextBoxColumn Часы;
         private DataGridViewTextBoxColumn Доход;
         private Button buttonGtafMoney_LED;
+        private Button buttonSearch_LED;
+        private Button buttonStaff_LED;
     }
 }
