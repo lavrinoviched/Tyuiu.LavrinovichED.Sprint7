@@ -125,49 +125,6 @@ namespace Tyuiu.LavrinovichED.Sprint7.Project.V11
 
         }
 
-        private void buttonGrafClock_LED_Click(object sender, EventArgs e)
-        {
-
-            // Очистка предыдущих данных на графике
-            chart_LED.Series.Clear();
-
-            // Создание новой серии для сплайн-графика
-            Series splineSeries = new Series
-            {
-                Name = "Отработанные часы",
-                Color = System.Drawing.Color.Blue,
-                ChartType = SeriesChartType.Spline // Устанавливаем тип графика как сплайн
-            };
-
-            // Добавление данных из DataGridView в серию графика
-            foreach (DataGridViewRow row in dataGridView_LED.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[1].Value != null)
-                {
-                    string lastName = row.Cells[0].Value.ToString();
-                    if (double.TryParse(row.Cells[10].Value.ToString(), out double hours))
-                    {
-                        // Используем индекс строки как значение по оси X
-                        int index = row.Index;
-                        splineSeries.Points.AddXY(index, hours);
-
-                        // Добавляем подпись с фамилией на график
-                        DataPoint point = splineSeries.Points[splineSeries.Points.Count - 1];
-                        point.Label = lastName; // Устанавливаем подпись для точки
-                    }
-                }
-            }
-
-            // Добавление серии на график
-            chart_LED.Series.Add(splineSeries);
-
-            // Настройка заголовков осей
-            chart_LED.ChartAreas[0].AxisX.Title = "Фамилия";
-            chart_LED.ChartAreas[0].AxisY.Title = "Отработанные часы";
-
-            splineSeries.IsValueShownAsLabel = true; // Показывать значения на графике
-        }
-
         private void buttonGtafMoney_LED_Click(object sender, EventArgs e)
         {
             // Очистка предыдущих данных на графике
@@ -309,6 +266,16 @@ namespace Tyuiu.LavrinovichED.Sprint7.Project.V11
                 textBoxStaff_LED.Text = k.ToString();
 
             }
+        }
+
+        private void chart_LED_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void toolStripSearch_LED_ButtonClick(object sender, EventArgs e)
+        {
+            //
         }
     }
 

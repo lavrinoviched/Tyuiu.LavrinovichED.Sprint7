@@ -78,6 +78,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormHelp_LED";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Подсказка";
             ResumeLayout(false);
             PerformLayout();

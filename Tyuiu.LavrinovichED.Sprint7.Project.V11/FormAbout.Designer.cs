@@ -78,6 +78,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormAbout_LED";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "О разработчике";
             ((System.ComponentModel.ISupportInitialize)pictureBox_LED).EndInit();
             ResumeLayout(false);
